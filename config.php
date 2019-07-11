@@ -30,17 +30,17 @@ class Config {
     // GENERAL SETTINGS
     // ------------------------------------------------------------------------
 
-    const BASE_URL      = 'http://url-to-easyappointments-directory';
+    const BASE_URL      = 'http://localhost/hystech';
     const LANGUAGE      = 'english';
-    const DEBUG_MODE    = FALSE;
+    const DEBUG_MODE    = TRUE;
 
     // ------------------------------------------------------------------------
     // DATABASE SETTINGS
     // ------------------------------------------------------------------------
 
-    const DB_HOST       = '';
-    const DB_NAME       = '';
-    const DB_USERNAME   = '';
+    const DB_HOST       = 'localhost';
+    const DB_NAME       = 'db_hystech';
+    const DB_USERNAME   = 'root';
     const DB_PASSWORD   = '';
 
     // ------------------------------------------------------------------------
