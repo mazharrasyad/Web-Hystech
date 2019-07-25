@@ -82,7 +82,7 @@ $config['url_suffix'] = '';
 |
 */
 
-$config['language'] = defined('Config::LANGUAGE') ? Config::LANGUAGE : 'english';
+$config['language'] = defined('Config::LANGUAGE') ? Config::LANGUAGE : 'indonesia';
 
 /*
 |--------------------------------------------------------------------------
@@ -95,28 +95,8 @@ $config['language'] = defined('Config::LANGUAGE') ? Config::LANGUAGE : 'english'
 |
 */
 $config['available_languages'] = [
-    'arabic',
-    'bulgarian',
-    'chinese',
-    'danish',
-    'dutch',
     'english',
-    'finnish',
-    'french',
-    'german',
-    'greek',
-    'hindi',
-    'hungarian',
-    'italian',
-    'japanese',
-    'luxembourgish',
-    'polish',
-    'portuguese',
-    'romanian',
-    'russian',
-    'slovak',
-    'spanish',
-    'turkish'
+    'indonesia'
 ];
 
 /*

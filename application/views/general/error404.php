@@ -9,7 +9,7 @@
 
     <link rel="stylesheet" type="text/css" href="<?= asset_url('assets/ext/bootstrap/css/bootstrap.min.css') ?>">
 
-    <link rel="icon" type="image/x-icon" href="<?= asset_url('assets/img/favicon.ico') ?>">
+    <link rel="icon" type="image/x-icon" href="<?= asset_url('assets/img/faviconh.ico') ?>">
 
     <script>
         var EALang = <?= json_encode($this->lang->language) ?>;
@@ -61,22 +61,16 @@
 </head>
 <body>
     <div id="message-frame" class="frame-container">
-        <h3><?= lang('page_not_found')
-                . ' - ' . lang('error') . ' 404' ?></h3>
+        <h3><?= lang('page_not_found') ?></h3>
         <p>
             <?= lang('page_not_found_message') ?>
         </p>
 
         <br>
 
-        <a href="<?= site_url() ?>" class="btn btn-primary btn-large">
-            <span class="glyphicon glyphicon-calendar"></span>
-            <?= lang('book_appointment_title') ?>
-        </a>
-
-        <a href="<?= site_url('backend') ?>" class="btn btn-default btn-large">
-            <span class="glyphicon glyphicon-wrench"></span>
-            <?= lang('backend_section') ?>
+        <a href="<?= site_url('backend') ?>" class="btn btn-primary btn-large">
+            <span class="glyphicon glyphicon-home"></span>
+            <?= lang('kembali') ?>
         </a>
     </div>
 

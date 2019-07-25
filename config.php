@@ -30,15 +30,15 @@ class Config {
     // GENERAL SETTINGS
     // ------------------------------------------------------------------------
 
-    const BASE_URL      = 'http://localhost/hystech';
-    const LANGUAGE      = 'english';
+    const BASE_URL      = 'http://172.16.7.172/hystech';
+    const LANGUAGE      = 'indonesia';
     const DEBUG_MODE    = TRUE;
 
     // ------------------------------------------------------------------------
     // DATABASE SETTINGS
     // ------------------------------------------------------------------------
 
-    const DB_HOST       = 'localhost';
+    const DB_HOST       = '127.0.0.1';
     const DB_NAME       = 'db_hystech';
     const DB_USERNAME   = 'root';
     const DB_PASSWORD   = '';

@@ -786,13 +786,13 @@ window.BackendCalendarDefaultView = window.BackendCalendarDefaultView || {};
             $calendar.fullCalendar('addEventSource', calendarEvents);
 
             var weekDays = [
-                'sunday', 
-                'monday', 
-                'tuesday', 
-                'wednesday', 
-                'thursday', 
-                'friday', 
-                'saturday' 
+                'minggu', 
+                'senin', 
+                'selasa', 
+                'rabu', 
+                'kamis', 
+                'jumat', 
+                'sabtu' 
             ];
 
             // :: ADD PROVIDER'S UNAVAILABLE TIME PERIODS
@@ -1056,12 +1056,12 @@ window.BackendCalendarDefaultView = window.BackendCalendarDefaultView || {};
 
         switch (GlobalVariables.dateFormat) {
             case 'DMY':
-                columnFormat = 'ddd D/M';
+                columnFormat = 'dddd';
                 break;
 
             case 'MDY':
             case 'YMD':
-                columnFormat = 'ddd M/D';
+                columnFormat = 'dddd';
                 break;
 
             default:
@@ -1085,7 +1085,7 @@ window.BackendCalendarDefaultView = window.BackendCalendarDefaultView || {};
                 throw new Error('Invalid time format setting provided!', GlobalVariables.timeFormat);
         }
 
-        var defaultView = window.innerWidth < 468 ? 'agendaDay' : 'agendaWeek';
+        var defaultView = window.innerWidth < 468 ? 'month' : 'agendaDay';
 
         // Initialize page calendar
         $('#calendar').fullCalendar({
@@ -1102,7 +1102,7 @@ window.BackendCalendarDefaultView = window.BackendCalendarDefaultView || {};
             header: {
                 left: 'prev,next today',
                 center: 'title',
-                right: 'agendaDay,agendaWeek,month'
+                right: 'agendaDay,month'
             },
 
             // Selectable
@@ -1202,18 +1202,18 @@ window.BackendCalendarDefaultView = window.BackendCalendarDefaultView || {};
             $('#select-filter-item').append(optgroupHtml);
         }
 
-        if (GlobalVariables.availableServices.length > 0) {
-            optgroupHtml = '<optgroup label="' + EALang.services + '" type="services-group">';
+        // if (GlobalVariables.availableServices.length > 0) {
+        //     optgroupHtml = '<optgroup label="' + EALang.services + '" type="services-group">';
 
-            $.each(GlobalVariables.availableServices, function (index, service) {
-                optgroupHtml += '<option value="' + service.id + '" type="' + FILTER_TYPE_SERVICE + '">' +
-                    service.name + '</option>';
-            });
+        //     $.each(GlobalVariables.availableServices, function (index, service) {
+        //         optgroupHtml += '<option value="' + service.id + '" type="' + FILTER_TYPE_SERVICE + '">' +
+        //             service.name + '</option>';
+        //     });
 
-            optgroupHtml += '</optgroup>';
+        //     optgroupHtml += '</optgroup>';
 
-            $('#select-filter-item').append(optgroupHtml);
-        }
+        //     $('#select-filter-item').append(optgroupHtml);
+        // }
 
         // Check permissions.
         if (GlobalVariables.user.role_slug == Backend.DB_SLUG_PROVIDER) {

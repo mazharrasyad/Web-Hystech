@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#35A768">
 
-    <title><?= lang('page_title') . ' ' .  $company_name ?></title>
+    <title><?= lang('page_title') ?></title>
 
     <link rel="stylesheet" type="text/css" href="<?= asset_url('assets/ext/bootstrap/css/bootstrap.min.css') ?>">
     <link rel="stylesheet" type="text/css" href="<?= asset_url('assets/ext/jquery-ui/jquery-ui.min.css') ?>">
@@ -15,7 +15,7 @@
     <link rel="stylesheet" type="text/css" href="<?= asset_url('assets/css/frontend.css') ?>">
     <link rel="stylesheet" type="text/css" href="<?= asset_url('assets/css/general.css') ?>">
 
-    <link rel="icon" type="image/x-icon" href="<?= asset_url('assets/img/favicon.ico') ?>">
+    <link rel="icon" type="image/x-icon" href="<?= asset_url('assets/img/faviconh.ico') ?>">
     <link rel="icon" sizes="192x192" href="<?= asset_url('assets/img/logo.png') ?>">
 </head>
 
@@ -33,7 +33,6 @@
                         <div id="step-1" class="book-step active-step" title="<?= lang('step_one_title') ?>">
                             <strong>1</strong>
                         </div>
-
                         <div id="step-2" class="book-step" title="<?= lang('step_two_title') ?>">
                             <strong>2</strong>
                         </div>
@@ -154,13 +153,16 @@
                                 </label>
 
                                 <select id="select-provider" class="col-xs-12 col-sm-4 form-control"></select>
-                            </div>
-
-                            <div id="service-description" style="display:none;"></div>
+                            </div>                            
                         </div>
                     </div>
-
+                    
                     <div class="command-buttons">
+                        <button type="button" id="button-back-2" class="btn button-back btn-default"
+                                data-step_index="2">
+                            <span class="glyphicon glyphicon-backward"></span>
+                            <?= lang('back') ?>
+                        </button>
                         <button type="button" id="button-next-1" class="btn button-next btn-primary"
                                 data-step_index="1">
                             <?= lang('next') ?>
@@ -329,21 +331,6 @@
                             <input type="hidden" name="post_data" />
                         </form>
                     </div>
-                </div>
-
-                <!-- FRAME FOOTER -->
-
-                <div id="frame-footer">
-                    Powered By
-                    <a href="http://easyappointments.org" target="_blank">Easy!Appointments</a>
-                    |
-                    <span id="select-language" class="label label-success">
-    		        	<?= ucfirst($this->config->item('language')) ?>
-    		        </span>
-                    |
-                    <a href="<?= site_url('backend'); ?>">
-                        <?= $this->session->user_id ? lang('backend_section') : lang('login') ?>
-                    </a>
                 </div>
             </div>
         </div>

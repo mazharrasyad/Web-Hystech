@@ -50,9 +50,6 @@
                 <a href="#current-user" aria-controls="current-user" role="tab" data-toggle="tab"><?= lang('current_user') ?></a>
             </li>
         <?php endif ?>
-        <li role="presentation">
-            <a href="#about-app" aria-controls="about-app" role="tab" data-toggle="tab"><?= lang('about_app') ?></a>
-        </li>
     </ul>
 
     <div class="tab-content">
@@ -507,70 +504,6 @@
                 </fieldset>
                 </div>
             </form>
-        </div>
-
-        <!-- ABOUT TAB -->
-
-        <div role="tabpanel" class="tab-pane" id="about-app">
-            <h3>Easy!Appointments</h3>
-
-            <p>
-                <?= lang('about_app_info') ?>
-            </p>
-
-            <div class="current-version well">
-                <?= lang('current_version') ?>
-                <?= $this->config->item('version') ?>
-                <?php if ($this->config->item('release_label')): ?>
-                    - <?= $this->config->item('release_label') ?>
-                <?php endif ?>
-            </div>
-
-            <h3><?= lang('support') ?></h3>
-            <p>
-                <?= lang('about_app_support') ?>
-
-                <br><br>
-
-                <a href="http://easyappointments.org">
-                    <?= lang('official_website') ?>
-                </a>
-                |
-                <a href="https://groups.google.com/forum/#!forum/easy-appointments">
-                    <?= lang('support_group') ?>
-                </a>
-                |
-                <a href="https://github.com/alextselegidis/easyappointments/issues">
-                    <?= lang('project_issues') ?>
-                </a>
-                |
-                <a href="http://easyappointments.wordpress.com">
-                    E!A Blog
-                </a>
-                |
-                <a href="https://www.facebook.com/easyappointments.org">
-                    Facebook
-                </a>
-                |
-                <a href="https://plus.google.com/+EasyappointmentsOrg">
-                    Google+
-                </a>
-                |
-                <a href="https://twitter.com/EasyAppts">
-                    Twitter
-                </a>
-                |
-                <a href="https://plus.google.com/communities/105333709485142846840">
-                    <?= lang('google_plus_community') ?>
-                </a>
-            </p>
-
-            <h3><?= lang('license') ?></h3>
-
-            <p>
-                <?= lang('about_app_license') ?>
-                <a href="http://www.gnu.org/copyleft/gpl.html">http://www.gnu.org/copyleft/gpl.html</a>
-            </p>
         </div>
 
     </div>

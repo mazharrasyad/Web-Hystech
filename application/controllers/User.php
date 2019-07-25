@@ -83,8 +83,8 @@ class User extends CI_Controller {
         $this->session->unset_userdata('dest_url');
 
         $view['base_url'] = $this->config->item('base_url');
-        $view['company_name'] = $this->settings_model->get_setting('company_name');
-        $this->load->view('user/logout', $view);
+        $view['company_name'] = $this->settings_model->get_setting('company_name');        
+        header('Location: ' . site_url('user/login'));
     }
 
     /**

@@ -16,7 +16,7 @@
     <link rel="stylesheet" type="text/css" href="<?= asset_url('assets/ext/bootstrap/css/bootstrap.min.css') ?>">
 	<link rel="stylesheet" type="text/css" href="<?= asset_url('assets/css/general.css') ?>">
 
-    <link rel="icon" type="image/x-icon" href="<?= asset_url('assets/img/favicon.ico') ?>">
+    <link rel="icon" type="image/x-icon" href="<?= asset_url('assets/img/faviconh.ico') ?>">
 
     <style>
         body {
@@ -95,9 +95,10 @@
     </script>
 </head>
 <body>
-    <div id="login-frame" class="frame-container">
-        <h2><?= lang('backend_section') ?></h2>
-        <p><?= lang('you_need_to_login') ?></p>
+    <div id="login-frame" class="frame-container">        
+        <img src="<?= base_url('assets/img/logo_warna.png') ?>" width="100px" align="center">
+        <img src="<?= base_url('assets/img/logo_jamkrindo.png') ?>" width="60px" align="right">
+        <h2 align="center"><?= lang('backend_section') ?></h2>
         <hr>
         <div class="alert hidden"></div>
         <form id="login-form">
@@ -118,15 +119,6 @@
             <button type="submit" id="login" class="btn btn-primary">
             	<?= lang('login') ?>
             </button>
-
-            <br><br>
-
-            <a href="<?= site_url('user/forgot_password') ?>" class="forgot-password">
-            	<?= lang('forgot_your_password') ?></a>
-            |
-            <span id="select-language" class="label label-success">
-	        	<?= ucfirst($this->config->item('language')) ?>
-	        </span>
         </form>
     </div>
 

@@ -42,7 +42,7 @@
         <div id="calendar-filter" class="form-inline col-xs-12 col-sm-5">
             <div class="form-group">
                 <label for="select-filter-item"><?= lang('display_calendar') ?></label>
-                <select id="select-filter-item" class="form-control" title="<?= lang('select_filter_item_hint') ?>">
+                <select id="select-filter-item" class="form-control" title="<?= lang('select_filter_item_hint') ?>">                
                 </select>
             </div>
         </div>
@@ -63,26 +63,12 @@
                 </button>
             <?php endif ?>
 
-            <?php if ($privileges[PRIV_APPOINTMENTS]['add'] == TRUE): ?>
+            <?php if ($privileges[PRIV_APPOINTMENTS]['add'] == TRUE): ?>                
                 <button id="insert-appointment" class="btn btn-default" title="<?= lang('new_appointment_hint') ?>">
                     <span class="glyphicon glyphicon-plus"></span>
                     <?= lang('appointment') ?>
                 </button>
-
-                <button id="insert-unavailable" class="btn btn-default" title="<?= lang('unavailable_periods_hint') ?>">
-                    <span class="glyphicon glyphicon-plus"></span>
-                    <?= lang('unavailable') ?>
-                </button>
             <?php endif ?>
-
-            <button id="reload-appointments" class="btn btn-default" title="<?= lang('reload_appointments_hint') ?>">
-                <span class="glyphicon glyphicon-repeat"></span>
-                <?= lang('reload') ?>
-            </button>
-
-            <button id="toggle-fullscreen" class="btn btn-default">
-                <span class="glyphicon glyphicon-fullscreen"></span>
-            </button>
         </div>
     </div>
 
@@ -103,8 +89,7 @@
                 <div class="modal-message alert hidden"></div>
 
                 <form>
-                    <fieldset>
-                        <legend><?= lang('appointment_details_title') ?></legend>
+                    <fieldset>                       
 
                         <input id="appointment-id" type="hidden">
 
@@ -203,18 +188,6 @@
                     <fieldset>
                         <legend>
                             <?= lang('customer_details_title') ?>
-                            <button id="new-customer" class="btn btn-default btn-xs"
-                                    title="<?= lang('clear_fields_add_existing_customer_hint') ?>"
-                                    type="button"><?= lang('new') ?>
-                            </button>
-                            <button id="select-customer" class="btn btn-primary btn-xs"
-                                    title="<?= lang('pick_existing_customer_hint') ?>"
-                                    type="button"><?= lang('select') ?>
-                            </button>
-                            <input id="filter-existing-customers"
-                                   placeholder="<?= lang('type_to_filter_customers') ?>"
-                                   style="display: none;" class="input-sm form-control">
-                            <div id="existing-customers-list" style="display: none;"></div>
                         </legend>
 
                         <input id="customer-id" type="hidden">
@@ -233,7 +206,7 @@
 
                                 <div class="form-group">
                                     <label for="email" class="control-label"><?= lang('email') ?> *</label>
-                                    <input id="email" class="required form-control">
+                                    <input id="email" class="form-control">
                                 </div>
 
                                 <div class="form-group">
@@ -241,29 +214,8 @@
                                     <input id="phone-number" class="required form-control">
                                 </div>
                             </div>
-                            <div class="col-xs-12 col-sm-6">
-                                <div class="form-group">
-                                    <label for="address" class="control-label"><?= lang('address') ?></label>
-                                    <input id="address" class="form-control">
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="city" class="control-label"><?= lang('city') ?></label>
-                                    <input id="city" class="form-control">
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="zip-code" class="control-label"><?= lang('zip_code') ?></label>
-                                    <input id="zip-code" class="form-control">
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="customer-notes" class="control-label"><?= lang('notes') ?></label>
-                                    <textarea id="customer-notes" rows="2" class="form-control"></textarea>
-                                </div>
-                            </div>
                         </div>
-                    </fieldset>
+                    </fieldset>                    
                 </form>
             </div>
 
@@ -274,51 +226,6 @@
         </div>
     </div>
 </div>
-
-<!-- MANAGE UNAVAILABLE MODAL -->
-
-<div id="manage-unavailable" class="modal fade">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h3 class="modal-title"><?= lang('new_unavailable_title') ?></h3>
-            </div>
-            <div class="modal-body">
-                <div class="modal-message alert hidden"></div>
-
-                <form>
-                    <fieldset>
-                        <input id="unavailable-id" type="hidden">
-                        
-                        <div class="form-group">
-                            <label for="unavailable-provider" class="control-label"><?= lang('provider') ?></label>
-                            <select id="unavailable-provider" class="form-control"></select>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="unavailable-start" class="control-label"><?= lang('start') ?></label>
-                            <input id="unavailable-start" class="form-control">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="unavailable-end" class="control-label"><?= lang('end') ?></label>
-                            <input id="unavailable-end" class="form-control">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="unavailable-notes" class="control-label"><?= lang('notes') ?></label>
-                            <textarea id="unavailable-notes" rows="3" class="form-control"></textarea>
-                        </div>
-                    </fieldset>
-                </form>
-            </div>
-            <div class="modal-footer">
-                <button id="save-unavailable" class="btn btn-primary"><?= lang('save') ?></button>
-                <button id="cancel-unavailable" class="btn btn-default" data-dismiss="modal"><?= lang('cancel') ?></button>
-            </div>
-        </div>
-    </div>
 </div>
 
 <!-- SELECT GOOGLE CALENDAR MODAL -->
@@ -343,3 +250,4 @@
         </div>
     </div>
 </div>
+

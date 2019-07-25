@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title><?= $company_name ?> | Easy!Appointments</title>
+    <title><?= $company_name ?></title>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
-    <link rel="icon" type="image/x-icon" href="<?= asset_url('assets/img/favicon.ico') ?>">
+    <link rel="icon" type="image/x-icon" href="<?= asset_url('assets/img/faviconh.ico') ?>">
 
     <link rel="stylesheet" type="text/css" href="<?= asset_url('assets/ext/bootstrap/css/bootstrap.min.css') ?>">
     <link rel="stylesheet" type="text/css" href="<?= asset_url('assets/ext/jquery-ui/jquery-ui.min.css') ?>">
@@ -48,53 +48,11 @@
         </div>
         
         <div id="header-menu" class="collapse navbar-collapse">
-            <ul class="nav navbar-nav navbar-right">
-                <?php $hidden = ($privileges[PRIV_APPOINTMENTS]['view'] == TRUE) ? '' : 'hidden' ?>
-                <?php $active = ($active_menu == PRIV_APPOINTMENTS) ? 'active' : '' ?>
-                <li class="<?= $active . $hidden ?>">
-                    <a href="<?= site_url('backend') ?>" class="menu-item"
-                            title="<?= lang('manage_appointment_record_hint') ?>">
-                        <?= lang('calendar') ?>
-                    </a>
-                </li>
 
-                <?php $hidden = ($privileges[PRIV_CUSTOMERS]['view'] == TRUE) ? '' : 'hidden' ?>
-                <?php $active = ($active_menu == PRIV_CUSTOMERS) ? 'active' : '' ?>
-                <li class="<?= $active . $hidden ?>">
-                    <a href="<?= site_url('backend/customers') ?>" class="menu-item"
-                            title="<?= lang('manage_customers_hint') ?>">
-                        <?= lang('customers') ?>
-                    </a>
-                </li>
+        <?php $hidden = ($privileges[PRIV_APPOINTMENTS]['view'] == TRUE) ? '' : 'hidden' ?>
+            <ul class="nav navbar-nav navbar-right">                
 
-                <?php $hidden = ($privileges[PRIV_SERVICES]['view'] == TRUE) ? '' : 'hidden' ?>
-                <?php $active = ($active_menu == PRIV_SERVICES) ? 'active' : '' ?>
-                <li class="<?= $active . $hidden ?>">
-                    <a href="<?= site_url('backend/services') ?>" class="menu-item"
-                            title="<?= lang('manage_services_hint') ?>">
-                        <?= lang('services') ?>
-                    </a>
-                </li>
-
-                <?php $hidden = ($privileges[PRIV_USERS]['view'] ==  TRUE) ? '' : 'hidden' ?>
-                <?php $active = ($active_menu == PRIV_USERS) ? 'active' : '' ?>
-                <li class="<?= $active . $hidden ?>">
-                    <a href="<?= site_url('backend/users') ?>" class="menu-item"
-                            title="<?= lang('manage_users_hint') ?>">
-                        <?= lang('users') ?>
-                    </a>
-                </li>
-
-                <?php $hidden = ($privileges[PRIV_SYSTEM_SETTINGS]['view'] == TRUE
-                        || $privileges[PRIV_USER_SETTINGS]['view'] == TRUE) ? '' : 'hidden' ?>
-                <?php $active = ($active_menu == PRIV_SYSTEM_SETTINGS) ? 'active' : '' ?>
-                <li class="<?= $active . $hidden ?>">
-                    <a href="<?= site_url('backend/settings') ?>" class="menu-item"
-                            title="<?= lang('settings_hint') ?>">
-                        <?= lang('settings') ?>
-                    </a>
-                </li>
-
+            <?php $active = ($active_menu == PRIV_APPOINTMENTS) ? 'active' : '' ?>
                 <li>
                     <a href="<?= site_url('user/logout') ?>" class="menu-item"
                             title="<?= lang('log_out_hint') ?>">

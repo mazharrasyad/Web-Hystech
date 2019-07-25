@@ -9,7 +9,7 @@
  * @since       v1.0.0
  * ---------------------------------------------------------------------------- */
 
-@-moz-document url-prefix() {
+ @-moz-document url-prefix() {
     body .checkbox input[type="checkbox"] {
         float: left;
     }
@@ -23,7 +23,7 @@ body .custom-qtip {
     background: #EFFDF6;
     font-size: 12px;
     line-height: 20px;
-    color: #258D53;
+    color: #213499;
 }
 
 body .ui-widget {
@@ -42,7 +42,7 @@ body .ui-dialog .ui-dialog-titlebar-close {
 }
 
 body .ui-draggable .ui-dialog-titlebar {
-    background: #39c678;
+    background: #213499;
     color: #FFF;
     font-size: 1.5em;
     font-weight: lighter;
